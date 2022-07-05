@@ -6,7 +6,7 @@ matplotlib
 make
 pylint
 pytest-cov
-dvc
+dvc[gdrive]
 joblib
 
 -e .
