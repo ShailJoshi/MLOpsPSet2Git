@@ -1,4 +1,4 @@
 [core]
-    remote = storage
-['remote "storage"']
-    url = s3://dvcdatastoreshailjoshi/dvcrawdata
+    remote = gstorage
+['remote "gstorage"']
+    url = gdrive://1BVMPQJ1lZybI2bk74rW5uV8FTgo5dHeM/
