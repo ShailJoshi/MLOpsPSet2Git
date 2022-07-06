@@ -17,6 +17,7 @@ jobs:
           dvc pull
           dvc repro
           
-          git fetch --prune --unshallow
-          dvc metrics diff --show-md $DEFAULT_BRANCH >> report.md
+          git fetch --prune
+          dvc metrics diff master --show-md >> README.md
+
 
