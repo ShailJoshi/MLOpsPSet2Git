@@ -3,6 +3,9 @@ MLOpsPSet2
 
 MLOps PSet2 project
 
+[![model-training](https://github.com/ShailJoshi/MLOpsPSet2Git/actions/workflows/cml.yml/badge.svg)](https://github.com/ShailJoshi/MLOpsPSet2Git/actions/workflows/cml.yml)
+
+
 Project Organization
 ------------
 
