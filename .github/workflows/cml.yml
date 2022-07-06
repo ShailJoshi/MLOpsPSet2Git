@@ -23,3 +23,4 @@ jobs:
           # dvc metrics diff master --show-md >> README.md
           dvc metrics diff --show-md $DEFAULT_BRANCH >> report.md
 
+          cml send-comment report.md
