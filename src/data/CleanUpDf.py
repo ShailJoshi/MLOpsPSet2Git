@@ -3,6 +3,7 @@ import pandas
 import pickle
 
 def CleanUpDf():
+    
     df = pandas.read_csv('./data/raw/04_cricket_1999to2011.csv')
     # Keep 1st innings data and remove errorneus data
     df_firstInnings = df[(df['Innings']==1) & (df['Error.In.Data']==0)]
@@ -30,4 +31,4 @@ def CleanUpDf():
     pickle.dump(df_cleanedfinal, dbfile)
     dbfile.close()
     
-    return 
+    return 1

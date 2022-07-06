@@ -1,0 +1,32 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: py src/models/TrainModel.py
+    deps:
+    - path: data/interim/temp2
+      md5: ada15d32feae68d249044436cdbbceed
+      size: 1050483
+    - path: data/interim/temp3
+      md5: 7c154a2016a34c09a9039ea086b79c31
+      size: 525298
+    - path: src/models/TrainModel.py
+      md5: 938f447c1d95754d0dfa5a1c63eb3aff
+      size: 830
+  cleanup:
+    cmd: py src/data/CleanUpDf.py
+    deps:
+    - path: data/raw/04_cricket_1999to2011.csv
+      md5: 785cf8eb0e207d1e7350090bf085c206
+      size: 22421891
+    - path: src/data/CleanUpDf.py
+      md5: f5d212bce8453a534e3645e1338eb26e
+      size: 1717
+  feature:
+    cmd: py src/features/FeatureArrays.py
+    deps:
+    - path: data/interim/temp
+      md5: be68b2a6703db8b53b734be22c9c0be8
+      size: 5145359
+    - path: src/features/FeatureArrays.py
+      md5: 552959e6bf1d91cee88b4180d70cda1c
+      size: 1995

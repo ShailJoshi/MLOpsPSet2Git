@@ -1,0 +1,25 @@
+stages:
+  cleanup:
+    cmd: py src/data/CleanUpDf.py
+    deps:
+    - data/raw/04_cricket_1999to2011.csv
+    - src/data/CleanUpDf.py
+    outs:
+    - data/interim/temp
+
+  feature:
+    cmd: py src/features/FeatureArrays.py
+    deps:
+    - data/interim/temp
+    - src/features/FeatureArrays.py
+    outs:
+    - data/interim/temp2
+    - data/interim/temp3
+
+  train:
+    cmd: py src/models/TrainModel.py
+    deps:
+    - src/models/TrainModel.py
+    - data/interim/temp2
+    - data/interim/temp3
+
