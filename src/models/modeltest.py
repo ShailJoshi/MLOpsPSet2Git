@@ -21,11 +21,6 @@ def pytest3():
     dbfile.close()
     assert 0.01> RunProductionFn(numpy.array([50,10]),Model.x)
 
-def pytest4():
-    dbfile = open('./models/DLmodel', 'rb')
-    Model = pickle.load(dbfile)
-    dbfile.close()
-    assert Model.success == True
 
 print("Running test 1")
 pytest1()
@@ -33,5 +28,3 @@ print("Running test 2")
 pytest2()
 print("Running test 3")
 pytest3()
-print("Running test 4")
-pytest4()
