@@ -41,6 +41,7 @@ jobs:
       run: |
         python --version
         pip install -r requirements.txt
+        dvc pull
         python ./src/models/triggertraining.py
 
         #echo "## Report from your EC2 Instance" > report.md
