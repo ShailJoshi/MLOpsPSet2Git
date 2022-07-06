@@ -7,6 +7,8 @@ This project implements the Duckworth Lewis model training for estimating the re
 
 [![model-training](https://github.com/ShailJoshi/MLOpsPSet2Git/actions/workflows/cml.yml/badge.svg)](https://github.com/ShailJoshi/MLOpsPSet2Git/actions/workflows/cml.yml)
 
+[![cml-aws-deploy](https://github.com/ShailJoshi/MLOpsPSet2Git/actions/workflows/aws.yml/badge.svg)](https://github.com/ShailJoshi/MLOpsPSet2Git/actions/workflows/aws.yml)
+
 
 
 Project Organization
