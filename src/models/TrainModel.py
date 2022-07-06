@@ -3,6 +3,7 @@ import numpy
 import scipy.optimize
 from RunProductionFn import *
 import pickle
+import json
 
 def sumSquareError(params,inputData,outputData):
     fnOutput = RunProductionFn(inputData,params)
@@ -21,8 +22,20 @@ def TrainModel():
 
     res = scipy.optimize.minimize(sumSquareError,args = (InputData,OutputData),x0=params)
 
+    error = sumSquareError(res.x,InputData,OutputData)
+
     dbfile = open('./models/DLmodel', 'ab')
     pickle.dump(res, dbfile)
     dbfile.close()
+
+    dict = {
+        "train_status" : res.success,
+        "sum_sq_error" : error
+    }        
+    json_object = json.dumps(dict, indent = 4)
+
+    with open("./reports/results.json", "w") as outfile:
+        outfile.write(json_object)
+
     return
 

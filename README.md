@@ -3,6 +3,8 @@ MLOpsPSet2
 
 MLOps PSet2 project
 
+This project implements the Duckworth Lewis model training for estimating the resourses in percentage that a team has given the remaining overs and wickets in the play. Run prediction.py to obtain resourses.
+
 [![model-training](https://github.com/ShailJoshi/MLOpsPSet2Git/actions/workflows/cml.yml/badge.svg)](https://github.com/ShailJoshi/MLOpsPSet2Git/actions/workflows/cml.yml)
 
 

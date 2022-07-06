@@ -11,7 +11,7 @@ def CleanUpDf():
     # Keep only the necessary columns
     df_firstInnings = df_firstInnings[['Match','Over','Runs','Total.Runs','Innings.Total.Runs','Total.Out','Innings.Total.Out']]
     numMatches = df_firstInnings.Match.unique().shape[0]
-
+    df_firstInnings = df_firstInnings[df_firstInnings['Match']<100000]
     # Create a column of expected total i.e. the sum of runs per over
     df_fIinningsSum = df_firstInnings[['Match','Runs']].groupby('Match').aggregate(numpy.sum)
     df_fIinningsSum = df_fIinningsSum.rename(columns={'Runs': 'ExpectedTotal'})
@@ -26,7 +26,7 @@ def CleanUpDf():
     
     # Remove innings if the mismatch between Expected Total and Actual Total is beyond a threshold. Indicates that many over's data is missing
     df_cleanedfinal = df_cleaned[df_cleaned['Innings.Total.Runs']<=(df_cleaned['ExpectedTotal']+10)]# & ((df_temp['TotalOvers']==50) | (df_temp['Innings.Total.Out']==10))]
-    
+    print(df_cleanedfinal.size)
     dbfile = open('./data/interim/temp4', 'ab')
     pickle.dump(df_cleanedfinal, dbfile)
     dbfile.close()

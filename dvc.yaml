@@ -26,4 +26,7 @@ stages:
     - src/models/TrainModel.py
     - data/interim/temp5
     - data/interim/temp6
+    metrics:
+    - reports/results.json:
+        persist: true
 
