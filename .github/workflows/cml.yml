@@ -1,4 +1,4 @@
-name: model-training
+name: dvc-repro-model-training
 on: [push]
 jobs:
   run:
@@ -17,8 +17,3 @@ jobs:
           dvc pull
           dvc repro
 
-          # Report metrics
-          dvc metrics diff master --show-md >> report.md
-
-
-          cml send-comment report.md
