@@ -31,4 +31,4 @@ def CleanUpDf():
     pickle.dump(df_cleanedfinal, dbfile)
     dbfile.close()
     
-    return 1
+    return

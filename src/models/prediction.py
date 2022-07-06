@@ -1,16 +1,13 @@
 import numpy
-import sys
-sys.path.insert(0, './src/features/')
-sys.path.insert(0, './src/data/')
-
 from CleanUpDf import *
+from FeatureArrays import *
+
 from RunProductionFn import *
-#from FeatureArrays import *
 #from TrainModel import *
 import pickle
 
 CleanUpDf()
-#FeatureArrays()
+FeatureArrays()
 #TrainModel()
 
 

@@ -21,3 +21,9 @@ def test3():
     Model = pickle.load(dbfile)
     dbfile.close()
     assert 0.01> RunProductionFn(numpy.array([50,10]),Model.x)
+
+def test4():
+    dbfile = open('./models/DLmodel', 'rb')
+    Model = pickle.load(dbfile)
+    dbfile.close()
+    assert Model.success == True

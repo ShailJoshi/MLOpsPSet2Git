@@ -49,4 +49,4 @@ def FeatureArrays():
     dbfile.close()
     
 
-    return 1
+    return

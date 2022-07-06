@@ -24,5 +24,5 @@ def TrainModel():
     dbfile = open('./models/DLmodel', 'ab')
     pickle.dump(res, dbfile)
     dbfile.close()
-    return 1
+    return
 
