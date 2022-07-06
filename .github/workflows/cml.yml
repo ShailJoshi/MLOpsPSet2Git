@@ -17,6 +17,8 @@ jobs:
           dvc pull
           dvc repro
           
+          git config --global --add safe.directory /__w/MLOpsPSet2Git/MLOpsPSet2Git
+          
           git fetch --prune
           dvc metrics diff master --show-md >> README.md
 
