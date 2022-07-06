@@ -11,10 +11,10 @@ def sumSquareError(params,inputData,outputData):
 
 def TrainModel():
 
-    dbfile = open('./data/interim/temp5', 'rb')
+    dbfile = open('./data/interim/temp8', 'rb')
     InputData = pickle.load(dbfile)
     dbfile.close()
-    dbfile = open('./data/interim/temp6', 'rb')
+    dbfile = open('./data/interim/temp9', 'rb')
     OutputData = pickle.load(dbfile)
     dbfile.close()
     # initialize coefficients for optimization
@@ -29,12 +29,11 @@ def TrainModel():
     dbfile.close()
 
     dict = {
-        "train_status" : res.success,
         "sum_sq_error" : error
     }        
     json_object = json.dumps(dict, indent = 4)
 
-    with open("./reports/results.json", "w") as outfile:
+    with open("./reports/resultsmain.json", "w") as outfile:
         outfile.write(json_object)
 
     return

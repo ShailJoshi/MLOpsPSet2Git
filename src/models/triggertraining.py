@@ -8,4 +8,4 @@ import pickle
 
 CleanUpDf()
 FeatureArrays()
-TrainModel()
+#TrainModel()

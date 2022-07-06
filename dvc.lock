@@ -19,8 +19,8 @@ stages:
       md5: 785cf8eb0e207d1e7350090bf085c206
       size: 22421891
     - path: src/models/CleanUpDf.py
-      md5: 62c255660daf1139023688e219768792
-      size: 1716
+      md5: 31aff887dbe6309966e21bb53ab2a9cf
+      size: 1813
     outs:
     - path: data/interim/temp4
       md5: 6764f368ba0224a00a5caa9889cf001b

@@ -5,28 +5,28 @@ stages:
     - data/raw/04_cricket_1999to2011.csv
     - src/models/CleanUpDf.py
     outs:
-    - data/interim/temp4:
+    - data/interim/temp7:
         persist: true
 
 
   feature:
     cmd: py src/models/FeatureArrays.py
     deps:
-    - data/interim/temp4
+    - data/interim/temp7
     - src/models/FeatureArrays.py
     outs:
-    - data/interim/temp5:
+    - data/interim/temp9:
         persist: true
-    - data/interim/temp6:
+    - data/interim/temp8:
         persist: true
 
   train:
     cmd: py src/models/TrainModel.py
     deps:
     - src/models/TrainModel.py
-    - data/interim/temp5
-    - data/interim/temp6
+    - data/interim/temp8
+    - data/interim/temp9
     metrics:
-    - reports/results.json:
+    - reports/resultsmain.json:
         persist: true
 
