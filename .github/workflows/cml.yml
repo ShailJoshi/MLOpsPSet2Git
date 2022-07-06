@@ -16,4 +16,7 @@ jobs:
           # Pull data & run-cache from S3 and reproduce pipeline
           dvc pull
           dvc repro
+          
+          git fetch --prune --unshallow
+          dvc metrics diff --show-md $DEFAULT_BRANCH >> report.md
 
