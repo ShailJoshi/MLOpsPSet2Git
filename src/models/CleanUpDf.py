@@ -27,7 +27,7 @@ def CleanUpDf():
     # Remove innings if the mismatch between Expected Total and Actual Total is beyond a threshold. Indicates that many over's data is missing
     df_cleanedfinal = df_cleaned[df_cleaned['Innings.Total.Runs']<=(df_cleaned['ExpectedTotal']+10)]# & ((df_temp['TotalOvers']==50) | (df_temp['Innings.Total.Out']==10))]
     
-    dbfile = open('./data/interim/temp', 'ab')
+    dbfile = open('./data/interim/temp4', 'ab')
     pickle.dump(df_cleanedfinal, dbfile)
     dbfile.close()
     

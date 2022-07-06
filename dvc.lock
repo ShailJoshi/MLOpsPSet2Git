@@ -3,30 +3,41 @@ stages:
   train:
     cmd: py src/models/TrainModel.py
     deps:
-    - path: data/interim/temp2
-      md5: ada15d32feae68d249044436cdbbceed
-      size: 1050483
-    - path: data/interim/temp3
-      md5: 7c154a2016a34c09a9039ea086b79c31
-      size: 525298
+    - path: data/interim/temp5
+      md5: b7e5f2b9e4c832fe5a1beb29cc9be57e
+      size: 3151449
+    - path: data/interim/temp6
+      md5: 5d3c098a9da45f16cbe03915497aaf9a
+      size: 1575894
     - path: src/models/TrainModel.py
-      md5: 938f447c1d95754d0dfa5a1c63eb3aff
-      size: 830
+      md5: 125f8770279a136239c0092338af4452
+      size: 828
   cleanup:
-    cmd: py src/data/CleanUpDf.py
+    cmd: py src/models/CleanUpDf.py
     deps:
     - path: data/raw/04_cricket_1999to2011.csv
       md5: 785cf8eb0e207d1e7350090bf085c206
       size: 22421891
-    - path: src/data/CleanUpDf.py
-      md5: f5d212bce8453a534e3645e1338eb26e
-      size: 1717
+    - path: src/models/CleanUpDf.py
+      md5: 62c255660daf1139023688e219768792
+      size: 1716
+    outs:
+    - path: data/interim/temp4
+      md5: 6764f368ba0224a00a5caa9889cf001b
+      size: 10290718
   feature:
-    cmd: py src/features/FeatureArrays.py
+    cmd: py src/models/FeatureArrays.py
     deps:
-    - path: data/interim/temp
-      md5: be68b2a6703db8b53b734be22c9c0be8
-      size: 5145359
-    - path: src/features/FeatureArrays.py
-      md5: 552959e6bf1d91cee88b4180d70cda1c
-      size: 1995
+    - path: data/interim/temp4
+      md5: 6764f368ba0224a00a5caa9889cf001b
+      size: 10290718
+    - path: src/models/FeatureArrays.py
+      md5: 0c24cf3bc99848b403ee16c51c15e68f
+      size: 1994
+    outs:
+    - path: data/interim/temp5
+      md5: b7e5f2b9e4c832fe5a1beb29cc9be57e
+      size: 3151449
+    - path: data/interim/temp6
+      md5: 5d3c098a9da45f16cbe03915497aaf9a
+      size: 1575894

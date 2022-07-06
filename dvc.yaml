@@ -1,25 +1,29 @@
 stages:
   cleanup:
-    cmd: py src/data/CleanUpDf.py
+    cmd: py src/models/CleanUpDf.py
     deps:
     - data/raw/04_cricket_1999to2011.csv
-    - src/data/CleanUpDf.py
+    - src/models/CleanUpDf.py
     outs:
-    - data/interim/temp
+    - data/interim/temp4:
+        persist: true
+
 
   feature:
-    cmd: py src/features/FeatureArrays.py
+    cmd: py src/models/FeatureArrays.py
     deps:
-    - data/interim/temp
-    - src/features/FeatureArrays.py
+    - data/interim/temp4
+    - src/models/FeatureArrays.py
     outs:
-    - data/interim/temp2
-    - data/interim/temp3
+    - data/interim/temp5:
+        persist: true
+    - data/interim/temp6:
+        persist: true
 
   train:
     cmd: py src/models/TrainModel.py
     deps:
     - src/models/TrainModel.py
-    - data/interim/temp2
-    - data/interim/temp3
+    - data/interim/temp5
+    - data/interim/temp6
 

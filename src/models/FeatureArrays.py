@@ -4,7 +4,7 @@ import pickle
 
 def FeatureArrays():
 
-    dbfile = open('./data/interim/temp', 'rb')
+    dbfile = open('./data/interim/temp4', 'rb')
     df_cleanedfinal = pickle.load(dbfile)
     dbfile.close()
 # Create a column of runs yet to be scored in the innings
@@ -40,11 +40,11 @@ def FeatureArrays():
     InputData = [OversLeftArr,WicketsArr]
     OutputData = MoreRunsScored.astype(float)
 
-    dbfile = open('./data/interim/temp2', 'ab')
+    dbfile = open('./data/interim/temp5', 'ab')
     pickle.dump(InputData, dbfile)
     dbfile.close()
 
-    dbfile = open('./data/interim/temp3', 'ab')
+    dbfile = open('./data/interim/temp6', 'ab')
     pickle.dump(OutputData, dbfile)
     dbfile.close()
     

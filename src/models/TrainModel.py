@@ -10,10 +10,10 @@ def sumSquareError(params,inputData,outputData):
 
 def TrainModel():
 
-    dbfile = open('./data/interim/temp2', 'rb')
+    dbfile = open('./data/interim/temp5', 'rb')
     InputData = pickle.load(dbfile)
     dbfile.close()
-    dbfile = open('./data/interim/temp3', 'rb')
+    dbfile = open('./data/interim/temp6', 'rb')
     OutputData = pickle.load(dbfile)
     dbfile.close()
     # initialize coefficients for optimization
