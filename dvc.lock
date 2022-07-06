@@ -3,15 +3,19 @@ stages:
   train:
     cmd: py src/models/TrainModel.py
     deps:
-    - path: data/interim/temp5
-      md5: b7e5f2b9e4c832fe5a1beb29cc9be57e
-      size: 3151449
-    - path: data/interim/temp6
-      md5: 5d3c098a9da45f16cbe03915497aaf9a
-      size: 1575894
+    - path: data/interim/temp8
+      md5: 1f95493d6e9c30520a3a6ef27b8b76da
+      size: 399535
+    - path: data/interim/temp9
+      md5: 11efebc5958cfd1c55b2d6a1d1a42d20
+      size: 199824
     - path: src/models/TrainModel.py
-      md5: 125f8770279a136239c0092338af4452
-      size: 828
+      md5: 578e0c2e226e48a159694fba111188b4
+      size: 1112
+    outs:
+    - path: reports/resultsmain.json
+      md5: 8309fd17417532000bfc304a60cd7f43
+      size: 44
   cleanup:
     cmd: py src/models/CleanUpDf.py
     deps:
@@ -19,25 +23,25 @@ stages:
       md5: 785cf8eb0e207d1e7350090bf085c206
       size: 22421891
     - path: src/models/CleanUpDf.py
-      md5: 31aff887dbe6309966e21bb53ab2a9cf
+      md5: 7e07a9172671318901da0c075533c1cb
       size: 1813
     outs:
-    - path: data/interim/temp4
-      md5: 6764f368ba0224a00a5caa9889cf001b
-      size: 10290718
+    - path: data/interim/temp7
+      md5: 921c76ebd192f52abca506d016666cd6
+      size: 1956879
   feature:
     cmd: py src/models/FeatureArrays.py
     deps:
-    - path: data/interim/temp4
-      md5: 6764f368ba0224a00a5caa9889cf001b
-      size: 10290718
+    - path: data/interim/temp7
+      md5: 921c76ebd192f52abca506d016666cd6
+      size: 1956879
     - path: src/models/FeatureArrays.py
-      md5: 0c24cf3bc99848b403ee16c51c15e68f
+      md5: ff9edd4542dd3c9271a4da6c0583377c
       size: 1994
     outs:
-    - path: data/interim/temp5
-      md5: b7e5f2b9e4c832fe5a1beb29cc9be57e
-      size: 3151449
-    - path: data/interim/temp6
-      md5: 5d3c098a9da45f16cbe03915497aaf9a
-      size: 1575894
+    - path: data/interim/temp8
+      md5: 1f95493d6e9c30520a3a6ef27b8b76da
+      size: 399535
+    - path: data/interim/temp9
+      md5: 11efebc5958cfd1c55b2d6a1d1a42d20
+      size: 199824
