@@ -8,7 +8,6 @@ pylint
 pytest-cov
 dvc[gdrive]
 joblib
-json
 -e .
 
 # external requirements
